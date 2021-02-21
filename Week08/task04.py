@@ -11,7 +11,7 @@ def element(list):
     list.reverse()
     for i in list:
             nothing+=str(i)+" "
-    print("Elemetlerin cut sirasi ile duzulmesi:",nothing)
+    print("Elemetlerin azalan sira ile duzulmesi:",nothing)
 
 element(myList)
 
