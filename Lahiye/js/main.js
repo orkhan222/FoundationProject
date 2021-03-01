@@ -190,7 +190,7 @@
 	
 	};
 
-
+	
 	var loaderPage = function() {
 		$(".colorlib-loader").fadeOut("slow");
 	};

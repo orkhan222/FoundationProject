@@ -12,7 +12,7 @@ $(document).ready(function() {
 				enabled: true, 
 
 				duration: 300, 
-				easing: 'ease-in-out',
+				easing: 'ease-in-out', 
 
 				
 				opener: function(openerElement) {

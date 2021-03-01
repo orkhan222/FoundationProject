@@ -7404,13 +7404,12 @@ h1, h2, h3, h4, h5,
   .colorlib-nav #colorlib-logo a {
     position: absolute;
     color: #595959;
-    margin: 10px 170px;
-   }
-   .image{
-     height: 80px;
-   }
-    
-    
+    margin: 7px 165px; }
+  .image{
+    vertical-align: middle;
+    border-style: none;
+    height: 80px;
+  }
 
 .colorlib-nav .menu-1 {
   display: block; }
@@ -8213,16 +8212,12 @@ h1, h2, h3, h4, h5,
       box-shadow: none;
       border-color: #616161; }
     .colorlib-form .form-control::-webkit-input-placeholder {
-      /* Chrome/Opera/Safari */
       color: #999999; }
     .colorlib-form .form-control::-moz-placeholder {
-      /* Firefox 19+ */
       color: #999999; }
     .colorlib-form .form-control:-ms-input-placeholder {
-      /* IE 10+ */
       color: #999999; }
     .colorlib-form .form-control:-moz-placeholder {
-      /* Firefox 18- */
       color: #999999; }
   .colorlib-form .form-group {
     margin-bottom: 15px; }
@@ -8524,7 +8519,6 @@ input[type="text"] {
           font-variant: normal;
           text-transform: none;
           line-height: 1;
-          /* Better Font Rendering =========== */
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
           content: "\e92d";

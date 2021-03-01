@@ -14,7 +14,6 @@
 .flex-pauseplay span {
   text-transform: capitalize;
 }
-
 .flexslider {
   margin: 0;
   padding: 0;
@@ -27,7 +26,6 @@
   display: block;
 }
 .flexslider .slides:after {
-
   display: block;
   clear: both;
   visibility: hidden;
@@ -231,7 +229,6 @@ html[xmlns] .flexslider .slides {
   opacity: 1;
   cursor: default;
 }
-
 @media screen and (max-width: 860px) {
   .flex-direction-nav .flex-prev {
     opacity: 1;

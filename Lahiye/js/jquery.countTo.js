@@ -1,12 +1,12 @@
 (function (factory) {
     if (typeof define === 'function' && define.amd) {
-        
+       
         define(['jquery'], factory);
     } else if (typeof exports === 'object') {
         
         factory(require('jquery'));
     } else {
-       
+        
         factory(jQuery);
     }
 }(function ($) {
@@ -18,12 +18,12 @@
 
   CountTo.DEFAULTS = {
     from: 0,               
-    to: 0,              
-    speed: 1000,          
-    refreshInterval: 100, 
+    to: 0,                 
+    speed: 1000,           
+    refreshInterval: 100,  
     decimals: 0,           
     formatter: formatter,  
-    onUpdate: null,        
+    onUpdate: null,      
     onComplete: null       
   };
 

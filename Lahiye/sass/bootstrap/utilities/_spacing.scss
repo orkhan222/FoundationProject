@@ -1,6 +1,4 @@
-// stylelint-disable declaration-no-important
 
-// Margin and Padding
 
 @each $breakpoint in map-keys($grid-breakpoints) {
   @include media-breakpoint-up($breakpoint) {
@@ -29,7 +27,7 @@
       }
     }
 
-    // Some special margin utils
+
     .m#{$infix}-auto { margin: auto !important; }
     .mt#{$infix}-auto,
     .my#{$infix}-auto {

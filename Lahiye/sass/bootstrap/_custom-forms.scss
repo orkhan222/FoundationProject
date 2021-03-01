@@ -1,11 +1,4 @@
-// Embedded icons from Open Iconic.
-// Released under MIT and copyright 2014 Waybury.
-// https://useiconic.com/open
 
-
-// Checkboxes and radios
-//
-// Base class takes care of all the key behavioral aspects.
 
 .custom-control {
   position: relative;
@@ -21,7 +14,7 @@
 
 .custom-control-input {
   position: absolute;
-  z-index: -1; // Put the input behind the label so it doesn't overlay text
+  z-index: -1; 
   opacity: 0;
 
   &:checked ~ .custom-control-label::before {
@@ -31,7 +24,7 @@
   }
 
   &:focus ~ .custom-control-label::before {
-    // the mixin is not used here to make sure there is feedback
+    
     box-shadow: $custom-control-indicator-focus-box-shadow;
   }
 
@@ -52,15 +45,12 @@
   }
 }
 
-// Custom control indicators
-//
-// Build the custom controls out of pseudo-elements.
 
 .custom-control-label {
   position: relative;
   margin-bottom: 0;
 
-  // Background-color and (when enabled) gradient
+
   &::before {
     position: absolute;
     top: (($line-height-base - $custom-control-indicator-size) / 2);
@@ -75,7 +65,7 @@
     @include box-shadow($custom-control-indicator-box-shadow);
   }
 
-  // Foreground (icon)
+
   &::after {
     position: absolute;
     top: (($line-height-base - $custom-control-indicator-size) / 2);
@@ -91,9 +81,6 @@
 }
 
 
-// Checkboxes
-//
-// Tweak just a few things for checkboxes.
 
 .custom-checkbox {
   .custom-control-label::before {
@@ -129,9 +116,7 @@
   }
 }
 
-// Radios
-//
-// Tweak just a few things for radios.
+
 
 .custom-radio {
   .custom-control-label::before {
@@ -155,11 +140,6 @@
 }
 
 
-// Select
-//
-// Replaces the browser default select with a custom one, mostly pulled from
-// https://primer.github.io/.
-//
 
 .custom-select {
   display: inline-block;
@@ -185,11 +165,7 @@
     box-shadow: $custom-select-focus-box-shadow;
 
     &::-ms-value {
-      // For visual consistency with other platforms/browsers,
-      // suppress the default white text on blue background highlight given to
-      // the selected option text when the (still closed) <select> receives focus
-      // in IE and (under certain conditions) Edge.
-      // See https://github.com/twbs/bootstrap/issues/19398.
+    
       color: $input-color;
       background-color: $input-bg;
     }
@@ -207,7 +183,7 @@
     background-color: $custom-select-disabled-bg;
   }
 
-  // Hides the default caret in IE11
+  
   &::-ms-expand {
     opacity: 0;
   }
@@ -228,9 +204,6 @@
 }
 
 
-// File
-//
-// Custom file input.
 
 .custom-file {
   position: relative;
@@ -297,15 +270,10 @@
   }
 }
 
-// Range
-//
-// Style range inputs the same across browsers. Vendor-specific rules for pseudo
-// elements cannot be mixed. As such, there are no shared styles for focus or
-// active states on prefixed selectors.
 
 .custom-range {
   width: 100%;
-  padding-left: 0; // Firefox specific
+  padding-left: 0; 
   background-color: transparent;
   appearance: none;
 
@@ -320,7 +288,7 @@
   &::-webkit-slider-thumb {
     width: $custom-range-thumb-width;
     height: $custom-range-thumb-height;
-    margin-top: -($custom-range-thumb-width * .25); // Webkit specific?
+    margin-top: -($custom-range-thumb-width * .25); 
     @include gradient-bg($custom-range-thumb-bg);
     border: $custom-range-thumb-border;
     @include border-radius($custom-range-thumb-border-radius);
@@ -329,8 +297,7 @@
 
     &:focus {
       outline: none;
-      box-shadow: $custom-range-thumb-focus-box-shadow; // No mixin for focus accessibility
-    }
+      box-shadow: $custom-range-thumb-focus-box-shadow; 
 
     &:active {
       @include gradient-bg($custom-range-thumb-active-bg);
@@ -340,7 +307,7 @@
   &::-webkit-slider-runnable-track {
     width: $custom-range-track-width;
     height: $custom-range-track-height;
-    color: transparent; // Why?
+    color: transparent; 
     cursor: $custom-range-track-cursor;
     background-color: $custom-range-track-bg;
     border-color: transparent;
@@ -359,7 +326,7 @@
 
     &:focus {
       outline: none;
-      box-shadow: $custom-range-thumb-focus-box-shadow; // No mixin for focus accessibility
+      box-shadow: $custom-range-thumb-focus-box-shadow; 
     }
 
     &:active {
@@ -373,7 +340,7 @@
     color: transparent;
     cursor: $custom-range-track-cursor;
     background-color: $custom-range-track-bg;
-    border-color: transparent; // Firefox specific?
+    border-color: transparent; 
     @include border-radius($custom-range-track-border-radius);
     @include box-shadow($custom-range-track-box-shadow);
   }
@@ -414,7 +381,7 @@
   }
 
   &::-ms-fill-upper {
-    margin-right: 15px; // arbitrary?
+    margin-right: 15px; 
     background-color: $custom-range-track-bg;
     @include border-radius($custom-range-track-border-radius);
   }

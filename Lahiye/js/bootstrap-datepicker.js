@@ -60,7 +60,6 @@
 
 
 
-
 	var Datepicker = function(element, options){
 		this.dates = new DateArray();
 		this.viewDate = UTCToday();
@@ -122,8 +121,11 @@
 		constructor: Datepicker,
 
 		_process_options: function(opts){
-			this._o = $.extend({}, this._o, opts)
+
+			this._o = $.extend({}, this._o, opts);
+
 			var o = this.o = $.extend({}, this._o);
+
 			var lang = o.language;
 			if (!dates[lang]){
 				lang = lang.split('-')[0];
@@ -159,6 +161,7 @@
 			}
 
 			o.startView = Math.max(o.startView, o.minViewMode);
+
 			if (o.multidate !== true){
 				o.multidate = Number(o.multidate) || false;
 				if (o.multidate !== false)
@@ -304,7 +307,7 @@
 				];
 			}
 			this._events.push(
-	
+			
 				[this.element, '*', {
 					blur: $.proxy(function(e){
 						this._focused_from = e.target;
@@ -539,7 +542,7 @@
 			}
 			
 			else {
-			
+				
 				this.picker.addClass('datepicker-orient-left');
 				if (offset.left < 0)
 					left -= offset.left - visualPadding;
@@ -1037,7 +1040,7 @@
 					? function(){
 						return new_date.getUTCMonth() === month;
 					}
-				
+					
 					: function(){
 						return new_date.getUTCMonth() !== new_month;
 					};
@@ -1050,7 +1053,7 @@
 			else {
 				
 				for (var i=0; i < mag; i++)
-				
+					
 					new_date = this.moveMonth(new_date, dir);
 				
 				new_month = new_date.getUTCMonth();
@@ -1095,7 +1098,7 @@
 						this.hide();
 					e.preventDefault();
 					break;
-				case 37: 
+				case 37:
 				case 39: 
 					if (!this.o.keyboardNavigation)
 						break;
@@ -1152,7 +1155,6 @@
 					}
 					break;
 				case 32: 
-					
 					
 					break;
 				case 13:
@@ -1279,7 +1281,7 @@
 	};
 
 	function opts_from_el(el, prefix){
-	
+		
 		var data = $(el).data(),
 			out = {}, inkey,
 			replace = new RegExp('^' + prefix.toLowerCase() + '([A-Z])');
@@ -1298,7 +1300,7 @@
 	function opts_from_locale(lang){
 		
 		var out = {};
-		
+	
 		if (!dates[lang]){
 			lang = lang.split('-')[0];
 			if (!dates[lang])
@@ -1487,7 +1489,7 @@
 			setters_map['dd'] = setters_map['d'];
 			date = UTCDate(date.getFullYear(), date.getMonth(), date.getDate(), 0, 0, 0);
 			var fparts = format.parts.slice();
-			
+		
 			if (parts.length !== fparts.length){
 				fparts = $(fparts).filter(function(i,p){
 					return $.inArray(p, setters_order) !== -1;
@@ -1601,7 +1603,7 @@
 	$.fn.datepicker.DPGlobal = DPGlobal;
 
 
-
+	
 
 	$.fn.datepicker.noConflict = function(){
 		$.fn.datepicker = old;
@@ -1609,7 +1611,6 @@
 	};
 
 
-	
 
 	$(document).on(
 		'focus.datepicker.data-api click.datepicker.data-api',

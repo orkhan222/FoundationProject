@@ -1,12 +1,10 @@
-//
-// Basic Bootstrap table
-//
+
 
 .table {
   width: 100%;
   max-width: 100%;
   margin-bottom: $spacer;
-  background-color: $table-bg; // Reset for nesting within parents with `background-color`.
+  background-color: $table-bg; 
 
   th,
   td {
@@ -30,9 +28,7 @@
 }
 
 
-//
-// Condensed table w/ half padding
-//
+
 
 .table-sm {
   th,
@@ -42,9 +38,7 @@
 }
 
 
-// Border versions
-//
-// Add or remove borders all around the table and between all the columns.
+
 
 .table-bordered {
   border: $table-border-width solid $table-border-color;
@@ -71,10 +65,6 @@
   }
 }
 
-// Zebra-striping
-//
-// Default zebra-stripe styles (alternating gray and transparent backgrounds)
-
 .table-striped {
   tbody tr:nth-of-type(#{$table-striped-order}) {
     background-color: $table-accent-bg;
@@ -82,9 +72,6 @@
 }
 
 
-// Hover effect
-//
-// Placed here since it has to come after the potential zebra striping
 
 .table-hover {
   tbody tr {
@@ -95,10 +82,7 @@
 }
 
 
-// Table backgrounds
-//
-// Exact selectors below required to override `.table-striped` and prevent
-// inheritance to nested tables.
+
 
 @each $color, $value in $theme-colors {
   @include table-row-variant($color, theme-color-level($color, -9));
@@ -107,11 +91,7 @@
 @include table-row-variant(active, $table-active-bg);
 
 
-// Dark styles
-//
-// Same table markup, but inverted color scheme: dark background and light text.
 
-// stylelint-disable-next-line no-duplicate-selectors
 .table {
   .thead-dark {
     th {
@@ -160,10 +140,6 @@
 }
 
 
-// Responsive tables
-//
-// Generate series of `.table-responsive-*` classes for configuring the screen
-// size of where your table will overflow.
 
 .table-responsive {
   @each $breakpoint in map-keys($grid-breakpoints) {
@@ -176,9 +152,9 @@
         width: 100%;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
-        -ms-overflow-style: -ms-autohiding-scrollbar; // See https://github.com/twbs/bootstrap/pull/10057
+        -ms-overflow-style: -ms-autohiding-scrollbar; 
 
-        // Prevent double border on horizontal scroll due to use of `display: block;`
+        
         > .table-bordered {
           border: 0;
         }

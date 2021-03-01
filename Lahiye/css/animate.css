@@ -1188,7 +1188,6 @@
 @-webkit-keyframes fadeInDown {
   from {
     opacity: 0;
-  
     -webkit-transform: translate3d(0, -50px, 0);
     transform: translate3d(0, -50px, 0);
   }
@@ -1203,7 +1202,6 @@
 @keyframes fadeInDown {
   from {
     opacity: 0;
-    
     -webkit-transform: translate3d(0, -50px, 0);
     transform: translate3d(0, -50px, 0);
   }
@@ -1256,7 +1254,6 @@
 @-webkit-keyframes fadeInLeft {
   from {
     opacity: 0;
-    
     -webkit-transform: translate3d(-50px, 0, 0);
     transform: translate3d(-50px, 0, 0);
   }
@@ -1271,7 +1268,6 @@
 @keyframes fadeInLeft {
   from {
     opacity: 0;
-  
     -webkit-transform: translate3d(-50px, 0, 0);
     transform: translate3d(-50px, 0, 0);
   }
@@ -1324,7 +1320,6 @@
 @-webkit-keyframes fadeInRight {
   from {
     opacity: 0;
-   
     -webkit-transform: translate3d(50px, 0, 0);
     transform: translate3d(50px, 0, 0);
   }
@@ -1339,7 +1334,6 @@
 @keyframes fadeInRight {
   from {
     opacity: 0;
-   
     -webkit-transform: translate3d(50px, 0, 0);
     transform: translate3d(50px, 0, 0);
   }
@@ -1393,14 +1387,12 @@
   from {
     opacity: 0;
     visibility: hidden;
-    
     -webkit-transform: translate3d(0, 40px, 0);
     transform: translate3d(0, 40px, 0);
   }
 
   to {
     opacity: 1;
-    
     -webkit-transform: none;
     transform: none;
   }
@@ -1410,7 +1402,6 @@
   from {
     opacity: 0;
     visibility: hidden;
-    
     -webkit-transform: translate3d(0, 40px, 0);
     transform: translate3d(0, 40px, 0);
   }
@@ -1432,7 +1423,6 @@
   from {
     opacity: 0;
     visibility: hidden;
-    
     -webkit-transform: translate3d(0, 20px, 0);
     transform: translate3d(0, 20px, 0);
   }
@@ -1449,7 +1439,6 @@
   from {
     opacity: 0;
     visibility: hidden;
-    
     -webkit-transform: translate3d(0, 20px, 0);
     transform: translate3d(0, 20px, 0);
   }
@@ -2628,7 +2617,6 @@
 }
 
 
-
 @-webkit-keyframes rollIn {
   from {
     opacity: 0;
@@ -2661,7 +2649,6 @@
   -webkit-animation-name: rollIn;
   animation-name: rollIn;
 }
-
 
 
 @-webkit-keyframes rollOut {

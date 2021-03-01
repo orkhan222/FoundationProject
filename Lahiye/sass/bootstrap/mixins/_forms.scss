@@ -1,22 +1,11 @@
-// Form control focus state
-//
-// Generate a customized focus state and for any input with the specified color,
-// which defaults to the `$input-focus-border-color` variable.
-//
-// We highly encourage you to not customize the default value, but instead use
-// this to tweak colors on an as-needed basis. This aesthetic change is based on
-// WebKit's default styles, but applicable to a wider range of browsers. Its
-// usability and accessibility should be taken into account with any change.
-//
-// Example usage: change the default blue border and shadow to white for better
-// contrast against a dark gray background.
+
 @mixin form-control-focus() {
   &:focus {
     color: $input-focus-color;
     background-color: $input-focus-bg;
     border-color: $input-focus-border-color;
     outline: 0;
-    // Avoid using mixin so we can pass custom focus shadow properly
+    
     @if $enable-shadows {
       box-shadow: $input-box-shadow, $input-focus-box-shadow;
     } @else {
@@ -40,7 +29,7 @@
     top: 100%;
     z-index: 5;
     display: none;
-    max-width: 100%; // Contain to parent when possible
+    max-width: 100%; 
     padding: .5rem;
     margin-top: .1rem;
     font-size: .875rem;
@@ -122,7 +111,7 @@
     }
   }
 
-  // custom file
+ 
   .custom-file-input {
     .was-validated &:#{$state},
     &.is-#{$state} {
