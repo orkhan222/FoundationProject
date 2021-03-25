@@ -49,19 +49,19 @@
                             <ul>
                                 <li class="active"><a href="{{ url_for('index') }}">Home</a></li>
                                 <li class="has-dropdown">
-                                    <a href="men.html">Men</a>
+                                    <a href="{{ url_for('men') }}">Men</a>
                                     <ul class="dropdown">
-                                        <li><a href="product-detail.html">Product Detail</a></li>
-                                        <li><a href="cart.html">Shopping Cart</a></li>
-                                        <li><a href="checkout.html">Checkout</a></li>
-                                        <li><a href="order-complete.html">Order Complete</a></li>
-                                        <li><a href="{{ url_for('addshut') }}">Wishlist</a></li>
+                                        <li><a href="{{ url_for('product') }}">Product Detail</a></li>
+                                        <li><a href="{{ url_for('cart') }}">Shopping Cart</a></li>
+                                        <li><a href="{{ url_for('checkout') }}">Checkout</a></li>
+                                        <li><a href="{{ url_for('order') }}">Order Complete</a></li>
+                                        <li><a href="{{ url_for('addshoes') }}">Wishlist</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="women.html">Women</a></li>
+                                <li><a href="{{ url_for('women') }}">Women</a></li>
                                 <li><a href="{{ url_for('about') }}">About</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                                <li class="cart"><a href="cart.html"><i class="icon-shopping-cart"></i> Cart [0]</a></li>
+                                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                                <li class="cart"><a href="{{ url_for('cart') }}"><i class="icon-shopping-cart"></i> Cart [0]</a></li>
                             </ul>
                         </div>
                     </div>
