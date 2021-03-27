@@ -1,8 +1,10 @@
 from web import app,db
+from models import *
 from flask import Flask,render_template,redirect,request,url_for,flash,current_app
 
 @app.route('/',methods=['GET','POST'])
 def index():
+    
     return render_template("web/index.html")
 
 @app.route('/about',methods=['GET','POST'])
@@ -38,6 +40,12 @@ def checkout():
 
 @app.route('/contact',methods=['GET','POST'])
 def contact():
+    if request.method == 'POST':
+        ctc = Contacts(ad=request.form['ad'],soyad=request.form['soyad'],
+            nomre=request.form['nomre'],mail=request.form['mail'],mesaj=request.form['mesaj'])
+        db.session.add(ctc)
+        db.session.commit()
+        return redirect ('/contact')
     return render_template("web/contact.html")
 
 

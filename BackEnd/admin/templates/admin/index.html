@@ -1,0 +1,113 @@
+{% extends "admin/layout.html" %}
+
+{% block bodyadmin %}
+<div class="row">
+    <div class="col-sm-12">
+        <div class="page-title-box">
+            <div class="float-right">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="javascript:void(0);">Dağlaroglu</a></li>
+                    <li class="breadcrumb-item active">Edit Contact</li>
+                </ol>
+            </div>
+            <h4 class="page-title">Contact</h4>
+        </div>
+        <!--end page-title-box-->
+    </div>
+    <!--end col-->
+</div>
+
+
+<form action="{{url_for('admin.adminindex')}}" method="POST" class="row">
+    <div class="col-4">
+        <div class="form-group row">
+            <label for="example-text-input" class="col-4 col-form-label text-right">Call Us On</label>
+            <div class="col-8">
+                <!-- {% if bos %}
+                {% for i in contact %}
+                    <input class="form-control" name="elaqe" value="{{i.elaqe}}" type="text" id="example-text-input" required>
+                {% endfor %}
+                {% else %}
+                    <input class="form-control" name="elaqe" value="Contact" type="text" id="example-text-input" required>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="form-group row">
+            <label for="example-text-input1" class="col-4 col-form-label text-right">Visit Office</label>
+            <div class="col-8">
+                {% if bos %}
+                {% for i in contact %}
+                    <input class="form-control" name="unvan" value='{{i.unvan}}' type="text" id="example-text-input1" required>
+                {% endfor %}
+                {% else %}
+                    <input class="form-control" name="unvan" value='Adress' type="text" id="example-text-input1" required>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="form-group row">
+            <label for="example-text-input2" class="col-4 col-form-label text-right">Email Us At</label>
+            <div class="col-8">
+                {% if bos %}
+                {% for i in contact %}
+                <input class="form-control" name="email" value="{{i.email}}" type="email" id="example-text-input2" required>
+                {% endfor %}
+                {% else %}
+                <input class="form-control" name="email" value="Email" type="email" id="example-text-input2" required>
+                {% endif %} -->
+            </div>
+        </div>
+    </div>
+</form>
+
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+
+                <h4 class="mt-0 header-title">Your Messages</h4>
+                <div class="table-responsive">
+                    <table class="table table-striped mb-0">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Ad</th>
+                                <th>Soyad</th>
+                                <th>Email</th>
+                                <th>Nomre</th>
+                                <th>Mesaj</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for ctc in ctc %}
+                            <tr>
+                                <td>{{ctc.id}}</td>
+                                <td>{{ctc.ad}}</td>
+                                <td>{{ctc.soyad}}</td>
+                                <td>{{ctc.mail}}</td>
+                                <td>{{ctc.nomre}}</td>
+                                <td>{{ctc.mesaj}}</td>
+                                <td>
+                                    <a href="/admin/deletecontact/{{ctc.id}}"><i
+                                            class="fas fa-trash-alt text-danger font-16"></i></a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    <!--end /table-->
+                </div>
+                <!--end /tableresponsive-->
+            </div>
+            <!--end card-body-->
+        </div>
+        <!--end card-->
+    </div>
+</div>
+{% endblock %}

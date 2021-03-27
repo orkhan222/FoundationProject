@@ -35,38 +35,38 @@
             <div class="col-md-6">
                 <div class="contact-wrap">
                     <h3>Get In Touch</h3>
-                    <form action="#" class="contact-form">
+                    <form action="{{url_for('contact')}}" method="POST" class="contact-form">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="fname">Ad</label>
-                                    <input type="text" id="fname" class="form-control" placeholder="Your firstname">
+                                    <input type="text" id="fname" name="ad" class="form-control" placeholder="Your firstname">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="lname">Soyad</label>
-                                    <input type="text" id="lname" class="form-control" placeholder="Your lastname">
+                                    <input type="text" id="lname" name="soyad" class="form-control" placeholder="Your lastname">
                                 </div>
                             </div>
                             <div class="w-100"></div>
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <label for="email">Email</label>
-                                    <input type="text" id="email" class="form-control" placeholder="Your email address">
+                                    <input type="text" id="email" name="mail" class="form-control" placeholder="Your email address">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="Phone">Phone Number</label>
-                                    <input type="text" id="zippostalcode" class="form-control" placeholder="Number">
+                                    <input type="text" id="zippostalcode" name="nomre" class="form-control" placeholder="Number">
                                 </div>
                             </div>
                             <div class="w-100"></div>
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <label for="message">Message</label>
-                                    <textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Say something about us"></textarea>
+                                    <textarea name="mesaj" id="message" cols="30" rows="10" class="form-control" placeholder="Say something about us"></textarea>
                                 </div>
                             </div>
 
