@@ -4,40 +4,33 @@
     <div class="col-lg-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="mt-0 header-title">Women Sliders</h4>
-                <form action="{{url_for('admin.womenSlide')}}" enctype="multipart/form-data" method="POST">
+                <h4 class="mt-0 header-title">Cart</h4>
+                <form action="{{url_for('admin.cart')}}" enctype="multipart/form-data" method="POST">
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-4">
                             <div class="form-group">
-                                <label for="message">File upload</label>
-                                <input name="file" type="file">
+                                <label for="username">Text</label>
+                                <input name="text" type="text" class="form-control" id="text" required="">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="useremail">Price</label>
+                                <input type="text" name="price" class="form-control" id="text" required="">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="subject">Quantity</label>
+                                <input type="text" name="quantity" class="form-control" id="subject" required="">
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-12 text-right">
-                            <button type="submit" class="btn btn-gradient-primary px-5 py-2">Send Message</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <!--end card-body-->
-        </div>
-        <!--end card-->
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-lg-12">
-        <div class="card">
-            <div class="card-body">
-                <h4 class="mt-0 header-title">Women Reklam</h4>
-                <form action="{{url_for('admin.womenReklam')}}" enctype="multipart/form-data" method="POST">
-                    <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="message">span</label>
-                                <input type="text" name="span" class="form-control" id="subject" required="">
+                                <label for="message">Total</label>
+                                <input type="text" name="total" class="form-control" id="subject" required="">
                             </div>
                         </div>
                     </div>
@@ -61,13 +54,46 @@
         <!--end card-->
     </div>
 </div>
-
+<div class="row">
+    <div class="col-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">price</th>
+                    <th scope="col">Text</th>
+                    <th scope="col">Total</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in cart %}
+                <tr>
+                    <th scope="row">{{i.id}}</th>
+                    <td>{{i.price}}</td>
+                    <td>{{i.text}}</td>
+                    <td>{{i.total}}</td>
+                    <td>{{i.quantity}}</td>
+                    <td>{{i.image}}</td>
+                   <td>
+                                    <a href="/admin/deleteabout/{{cart.id}}"><i
+                                            class="fas fa-trash-alt text-danger font-16"></i></a>
+                                </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- RETALED/////////////////////////////////////////////////////////////////////////////// -->
 <div class="row">
     <div class="col-lg-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="mt-0 header-title">Women Best Sellers</h4>
-                <form action="{{url_for('admin.WomenAll')}}" enctype="multipart/form-data" method="POST">
+                <h4 class="mt-0 header-title">Cart Relared</h4>
+                <form action="{{url_for('admin.cartrelated')}}" enctype="multipart/form-data" method="POST">
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">

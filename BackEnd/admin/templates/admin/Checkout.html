@@ -1,0 +1,86 @@
+{% extends "admin/layout.html" %}
+
+{% block bodyadmin %}
+<div class="row">
+    <div class="col-sm-12">
+        <div class="page-title-box">
+            <div class="float-right">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="javascript:void(0);">Dağlaroglu</a></li>
+                    <li class="breadcrumb-item active">Edit Checkout</li>
+                </ol>
+            </div>
+            <h4 class="page-title">Checkout</h4>
+        </div>
+        <!--end page-title-box-->
+    </div>
+    <!--end col-->
+</div>
+
+
+<form action="{{url_for('admin.admincheckout')}}" method="POST" class="row">
+    <div class="col-4">
+        <div class="form-group row">
+            <label for="example-text-input" class="col-4 col-form-label text-right">Call Us On</label>
+            <div class="col-8">
+            </div>
+        </div>
+    </div>
+</form>
+
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+
+                <h4 class="mt-0 header-title">Your Messages</h4>
+                <div class="table-responsive">
+                    <table class="table table-striped mb-0">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Ad</th>
+                                <th>Soyad</th>
+                                <th>Email</th>
+                                <th>Nomre</th>
+                                <th>Magaza Adi</th>
+                                <th>Adress</th>
+                                <th>Seher</th>
+                                <th>Zip</th>
+                                <th>Country</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for chec in chec %}
+                            <tr>
+                                <td>{{chec.id}}</td>
+                                <td>{{chec.ad}}</td>
+                                <td>{{chec.soyad}}</td>
+                                <td>{{chec.email}}</td>
+                                <td>{{chec.nomre}}</td>
+                                <td>{{chec.magazadi}}</td>
+                                <td>{{chec.adress}}</td>
+                                <td>{{chec.seher}}</td>
+                                <td>{{chec.zip}}</td>
+                                <td>{{chec.country}}</td>
+                                <td>
+                                    <a href="/admin/admindeletecheckout/{{chec.id}}"><i
+                                            class="fas fa-trash-alt text-danger font-16"></i></a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    <!--end /table-->
+                </div>
+                <!--end /tableresponsive-->
+            </div>
+            <!--end card-body-->
+        </div>
+        <!--end card-->
+    </div>
+</div>
+{% endblock %}

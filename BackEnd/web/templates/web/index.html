@@ -68,12 +68,12 @@
             {% for i in best %}
             <div class="col-lg-3 mb-4 text-center">
                 <div class="product-entry border">
-                    <a href="#" class="prod-img">
-                        <img src="url({{i.image}})" class="img-fluid"
+                    <a href="/product/{{i.id}}" class="prod-img">
+                        <img src="{{i.image}}" class="img-fluid"
                             alt="Free html5 bootstrap 4 template">
                     </a>
                     <div class="desc">
-                        <h2><a href="#">{{i.text}}</a></h2>
+                        <h2><a href="/product/{{i.id}}">{{i.text}}</a></h2>
                         <span class="price">{{i.cost}}</span>
                     </div>
                 </div>

@@ -28,7 +28,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-12">                            
+                        <div class="col-md-12">
                             <div class="form-group">
                                 <label for="message">Span</label>
                                 <input type="text" name="span" class="form-control" id="subject" required="">
@@ -36,7 +36,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-12">                            
+                        <div class="col-md-12">
                             <div class="form-group">
                                 <label for="message">File upload</label>
                                 <input name="file" type="file">
@@ -49,11 +49,48 @@
                         </div>
                     </div>
                 </form>
-            </div><!--end card-body-->
-        </div><!--end card-->
+            </div>
+            <!--end card-body-->
+        </div>
+        <!--end card-->
     </div>
 </div>
-
+<div class="row">
+    <div class="col-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Text01</th>
+                    <th scope="col">Texxt02</th>
+                    <th scope="col">Span</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in slide %}
+                <tr>
+                    <th scope="row">{{i.id}}</th>
+                    <td>{{i.title}}</td>
+                    <td>{{i.text1}}</td>
+                    <td>{{i.title2}}</td>
+                    <td>{{i.span}}</td>
+                    <td>{{i.image}}</td>
+                    <td name="buttons">
+                        <div class=" pull-right">
+                            <a href=""><i class="dripicons-pencil"></i></a>
+                            <a href="/admin/deleteslide/{{i.id}}"><i class="dripicons-cross" aria-hidden="true"></i></a>
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    </div>
+<!-- //////////////////////////////////////////////////HOME Reklam////////////////////////////////////////////////////////// -->
 <div class="row">
     <div class="col-lg-12">
         <div class="card">
@@ -68,26 +105,54 @@
                                 <input name="text" type="text" class="form-control" id="title" required="">
                             </div>
                         </div>
-                    <div class="row">
-                        <div class="col-md-12">                            
-                            <div class="form-group">
-                                <label for="message">File upload</label>
-                                <input name="file" type="file">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="message">File upload</label>
+                                    <input name="file" type="file">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12 text-right">
-                            <button type="submit" class="btn btn-gradient-primary px-5 py-2">Send Message</button>
+                        <div class="row">
+                            <div class="col-sm-12 text-right">
+                                <button type="submit" class="btn btn-gradient-primary px-5 py-2">Send Message</button>
+                            </div>
                         </div>
-                    </div>
                 </form>
-            </div><!--end card-body-->
-        </div><!--end card-->
+            </div>
+            <!--end card-body-->
+        </div>
+        <!--end card-->
     </div>
 </div>
-
-
+<div class="col-12">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Text</th>
+                <th scope="col">Image</th>
+                <th scope="col">Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in rekllam %}
+            <tr>
+                <th scope="row">{{i.id}}</th>
+                <td>{{i.text}}</td>
+                <td>{{i.image}}</td>
+                <td name="buttons">
+                    <div class=" pull-right">
+                        <a href=""><i class="dripicons-pencil"></i></a>
+                        <a href="/admin/deletereklam/{{i.id}}"><i class="dripicons-cross" aria-hidden="true"></i></a>
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<!-- /////////////////////////////////HOME Best/////////////////////////////////////////////////////// -->
 <div class="row">
     <div class="col-lg-12">
         <div class="card">
@@ -102,31 +167,63 @@
                                 <input name="text" type="text" class="form-control" id="title" required="">
                             </div>
                         </div>
-                    <div class="row">
-                        <div class="col-md-12">                            
-                            <div class="form-group">
-                                <label for="message">Cost</label>
-                                <input type="text" name="cost" class="form-control" id="subject" required="">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="message">Cost</label>
+                                    <input type="text" name="cost" class="form-control" id="subject" required="">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">                            
-                            <div class="form-group">
-                                <label for="message">File upload</label>
-                                <input name="file" type="file">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="message">File upload</label>
+                                    <input name="file" type="file">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12 text-right">
-                            <button type="submit" class="btn btn-gradient-primary px-5 py-2">Send Message</button>
+                        <div class="row">
+                            <div class="col-sm-12 text-right">
+                                <button type="submit" class="btn btn-gradient-primary px-5 py-2">Send Message</button>
+                            </div>
                         </div>
-                    </div>
                 </form>
-            </div><!--end card-body-->
-        </div><!--end card-->
+            </div>
+            <!--end card-body-->
+        </div>
+        <!--end card-->
     </div>
 </div>
-
+<div class="row">
+<div class="col-12">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Cost</th>
+                <th scope="col">Text</th>
+                <th scope="col">Image</th>
+                <th scope="col">Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in seller %}
+            <tr>
+                <th scope="row">{{i.id}}</th>
+                <td>{{i.cost}}</td>
+                <td>{{i.text}}</td>
+                <td>{{i.image}}</td>
+                <td name="buttons">
+                    <div class=" pull-right">
+                        <a href=""><i class="dripicons-pencil"></i></a>
+                        <a href="/admin/deletesellers/{{i.id}}"><i class="dripicons-cross" aria-hidden="true"></i></a>
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+</div>
 {% endblock %}

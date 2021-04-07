@@ -10,7 +10,7 @@
 </div>
 
 <div class="breadcrumbs-two">
-    {% for i in womensliders %}
+    {% for i in womenSlide %}
     <div class="container">
         <div class="row">
             <div class="col">
@@ -25,7 +25,7 @@
     {% endfor %}
 </div>
 
-{% for i in womenreklam %}
+{% for i in womenReklam %}
 <div class="colorlib-featured">
     <div class="container">
         <div class="row">
@@ -141,12 +141,12 @@
                 </div>
             </div>
             <div class="col-lg-9 col-xl-9">
-                {% for i in all %}
+                {% for i in womenviawall %}
                 <div class="row row-pb-md">
                     <div class="col-lg-4 mb-4 text-center">
                         <div class="product-entry border">
                             <a href="#" class="prod-img">
-                                <img src="url({{i.image}})" class="img-fluid" alt="Free html5 bootstrap 4 template">
+                                <img src="{{i.image}}" class="img-fluid" alt="Free html5 bootstrap 4 template">
                             </a>
                             <div class="desc">
                                 <h2><a href="#">{{i.text}}</a></h2>

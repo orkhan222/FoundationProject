@@ -7,7 +7,8 @@ def index():
     homesliders = Homesliders.query.all()
     homereklam = Homereklam.query.all()
     homebestsellers = Bestsellers.query.all()
-    return render_template("web/index.html",sliders=homesliders,reklam=homereklam,best=homebestsellers)
+    cart = Cart.query.all()
+    return render_template("web/index.html",sliders=homesliders,reklam=homereklam,best=homebestsellers,cart=cart)
 
 @app.route('/about',methods=['GET','POST'])
 def about():
@@ -16,11 +17,15 @@ def about():
 
 @app.route('/addshoes',methods=['GET','POST'])
 def addshoes():
-    return render_template("web/addshoes.html")
+    wishlist = Wishlist.query.all()
+    wishlistrelated = Wishlistrelated.query.all()
+    return render_template("web/addshoes.html",wishlist=wishlist,wishlistrelated=wishlistrelated)
 
 @app.route('/cart',methods=['GET','POST'])
 def cart():
-    return render_template("web/cart.html")
+    cart = Cart.query.all()
+    cartrelated = Related.query.all()
+    return render_template("web/cart.html",cart=cart,cartrelated=cartrelated)
 
 
 @app.route('/men',methods=['GET','POST'])
@@ -33,33 +38,54 @@ def men():
 
 @app.route('/women',methods=['GET','POST'])
 def women():
-    womensliders = Womensliders.query.all()
-    womenreklam = Womenreklam.query.all()
-    all = Womeniawall.query.all()
-    return render_template("web/women.html",womensliders=womensliders,womenreklam=womenreklam,all=all)
+    womenSlide = WomenSlide.query.all()
+    womenReklam = WomenReklam.query.all()
+    womenAll = WomenAll.query.all()
+    return render_template("web/women.html",womenSlide=womenSlide,womenReklam=womenReklam,womenAll=womenAll)
 
 @app.route('/order',methods=['GET','POST'])
 def order():
+   
     return render_template("web/order-complete.html")
 
 @app.route('/checkout',methods=['GET','POST'])
 def checkout():
+    if request.method == 'POST':
+        chec = Checkout(
+            ad=request.form['ad'],
+            soyad=request.form['soyad'],
+            nomre=request.form['nomre'],
+            email=request.form['email'],
+            country=request.form['country'],
+            magazadi=request.form['magazadi'],
+            adress=request.form['adress'],
+            seher=request.form['seher'],
+            zip=request.form['zip']
+        )
+        db.session.add(chec)
+        db.session.commit()
+        return redirect ('/checkout')
     return render_template("web/checkout.html")
 
 
 @app.route('/contact',methods=['GET','POST'])
 def contact():
     if request.method == 'POST':
-        ctc = Contacts(ad=request.form['ad'],soyad=request.form['soyad'],
-            nomre=request.form['nomre'],mail=request.form['mail'],mesaj=request.form['mesaj'])
+        ctc = Contacts(
+            ad=request.form['ad'],
+            soyad=request.form['soyad'],
+            nomre=request.form['nomre'],
+            mail=request.form['mail'],
+            mesaj=request.form['mesaj']
+        )
         db.session.add(ctc)
         db.session.commit()
         return redirect ('/contact')
     return render_template("web/contact.html")
 
 
-@app.route('/product',methods=['GET','POST'])
-def product():
-    productdetail = Productdetail.query.all()
+@app.route('/product/<int:id>',methods=['GET','POST'])
+def product1(id):
+    productdetail = Bestsellers.query.filter_by(id=id)
     return render_template("web/product-detail.html",productdetail=productdetail)
 
