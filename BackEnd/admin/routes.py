@@ -27,8 +27,13 @@ def homesliders():
         newName=f"sliders{randNumber}.{f.filename.split('.')[-1]}"
         f.save(os.path.join(app.config['UPLOAD_PATH'],newName))   
         filePath=f"/{app.config['UPLOAD_PATH']}/{newName}"
-        db.session.add(Homesliders(title=request.form['title'],text1=request.form['text1'],
-            title2=request.form['text2'],span=request.form['span'],image=filePath))
+        db.session.add(Homesliders(
+            title=request.form['title'],
+            text1=request.form['text1'],
+            title2=request.form['text2'],
+            span=request.form['span'],
+            image=filePath)
+        )
         db.session.commit()
         return redirect('/admin')    
     return render_template('admin/Homesliders.html',slide=slide)
@@ -51,7 +56,10 @@ def homereklam():
         newName=f"reklam{randNumber}.{f.filename.split('.')[-1]}"
         f.save(os.path.join(app.config['UPLOAD_PATH'],newName))   
         filePath=f"/{app.config['UPLOAD_PATH']}/{newName}"
-        db.session.add(Homereklam(text=request.form['text'],image=filePath))
+        db.session.add(Homereklam(
+            text=request.form['text'],
+            image=filePath)
+        )
         db.session.commit()
         return redirect('/admin')    
     return render_template('admin/Homesliders.html',rekllam=rekllam)
@@ -72,7 +80,11 @@ def homebestsellers():
         newName=f"best{randNumber}.{f.filename.split('.')[-1]}"
         f.save(os.path.join(app.config['UPLOAD_PATH'],newName))   
         filePath=f"/{app.config['UPLOAD_PATH']}/{newName}"
-        db.session.add(Bestsellers(text=request.form['text'],cost=request.form['cost'],image=filePath))
+        db.session.add(Bestsellers(
+            text=request.form['text'],
+            cost=request.form['cost'],
+            image=filePath)
+        )
         db.session.commit()
         return redirect('/admin')    
     return render_template('admin/Homesliders.html',seller=seller)
@@ -98,7 +110,9 @@ def mensliders():
         newName=f"mensliders{randNumber}.{f.filename.split('.')[-1]}"
         f.save(os.path.join(app.config['UPLOAD_PATH'],newName))   
         filePath=f"/{app.config['UPLOAD_PATH']}/{newName}"
-        db.session.add(Mensliders(image=filePath))
+        db.session.add(Mensliders(
+            image=filePath)
+        )
         db.session.commit()
         return redirect('/men')    
     return render_template('admin/Men.html')
@@ -114,7 +128,10 @@ def menreklam():
         newName=f"menreklam{randNumber}.{f.filename.split('.')[-1]}"
         f.save(os.path.join(app.config['UPLOAD_PATH'],newName))   
         filePath=f"/{app.config['UPLOAD_PATH']}/{newName}"
-        db.session.add(Menreklam(span=request.form['span'],image=filePath))
+        db.session.add(Menreklam(
+            span=request.form['span'],
+            image=filePath)
+        )
         db.session.commit()
         return redirect('/men')    
     return render_template('admin/Men.html')
@@ -128,7 +145,11 @@ def menviawall():
         newName=f"all{randNumber}.{f.filename.split('.')[-1]}"
         f.save(os.path.join(app.config['UPLOAD_PATH'],newName))   
         filePath=f"/{app.config['UPLOAD_PATH']}/{newName}"
-        db.session.add(Menviawall(text=request.form['text'],cost=request.form['cost'],image=filePath))
+        db.session.add(Menviawall(
+            text=request.form['text'],
+            cost=request.form['cost'],
+            image=filePath)
+        )
         db.session.commit()
         return redirect('/men')    
     return render_template('admin/Men.html')
@@ -142,7 +163,9 @@ def womenSlide():
         newName=f"womenslider{randNumber}.{f.filename.split('.')[-1]}"
         f.save(os.path.join(app.config['UPLOAD_PATH'],newName))   
         filePath=f"/{app.config['UPLOAD_PATH']}/{newName}"
-        db.session.add(WomenSlide(image=filePath))
+        db.session.add(WomenSlide(
+            image=filePath)
+        )
         db.session.commit()
         return redirect('/women')    
     return render_template('admin/Women.html')
@@ -155,21 +178,28 @@ def womenReklam():
         newName=f"womenReklam{randNumber}.{f.filename.split('.')[-1]}"
         f.save(os.path.join(app.config['UPLOAD_PATH'],newName))   
         filePath=f"/{app.config['UPLOAD_PATH']}/{newName}"
-        db.session.add(WomenReklam(span=request.form['span'],image=filePath))
+        db.session.add(WomenReklam(
+            span=request.form['span'],
+            image=filePath)
+        )
         db.session.commit()
         return redirect('/women')    
     return render_template('admin/Women.html')
 
 
 @admin_bp.route("/WomenAll",methods=['GET','POST'])
-def WomenAll():
+def womenAll():
     if request.method=='POST':
         randNumber=random.randint(1, 90000)
         f = request.files['file']
-        newName=f"all1{randNumber}.{f.filename.split('.')[-1]}"
+        newName=f"womenAll{randNumber}.{f.filename.split('.')[-1]}"
         f.save(os.path.join(app.config['UPLOAD_PATH'],newName))   
         filePath=f"/{app.config['UPLOAD_PATH']}/{newName}"
-        db.session.add(WomenAll(text=request.form['text'],cost=request.form['cost'],image=filePath))
+        db.session.add(WomenAll(
+            text=request.form['text'],
+            cost=request.form['cost'],
+            image=filePath)
+        )
         db.session.commit()
         return redirect('/women')    
     return render_template('admin/Women.html')
@@ -185,27 +215,20 @@ def about():
         newName=f"about{randNumber}.{f.filename.split('.')[-1]}"
         f.save(os.path.join(app.config['UPLOAD_PATH'],newName))   
         filePath=f"/{app.config['UPLOAD_PATH']}/{newName}"
-        db.session.add(About(text=request.form['text'],span=request.form['span'],image=filePath))
+        db.session.add(About(
+            text=request.form['text'],
+            span=request.form['span'],
+            image=filePath)
+        )
         db.session.commit()
         return redirect('/about')    
     return render_template('admin/About.html',about=about)
 
     # ///////////////////////////ABOUT HISSE BITDI///////////////////////////////////////
-@admin_bp.route("/productdetail",methods=['GET','POST'])
-def productdetail():
-    if request.method=='POST':
-        randNumber=random.randint(1, 90000)
-        f = request.files['file']
-        newName=f"productdetail{randNumber}.{f.filename.split('.')[-1]}"
-        f.save(os.path.join(app.config['UPLOAD_PATH'],newName))   
-        filePath=f"/{app.config['UPLOAD_PATH']}/{newName}"
-        db.session.add(Productdetail(text=request.form['text'],span=request.form['span'],cost=request.form['cost'],image=filePath))
-        db.session.commit()
-        return redirect('/product')    
-    return render_template('admin/Product.html')
 
 
-# //////////////////////////////PRODUCT HISSE BITDI///////////////////////////////////////////
+
+
 
 
 @admin_bp.route("/checkout",methods=['GET','POST'])
@@ -253,17 +276,27 @@ def deletecart(id):
 
 @admin_bp.route("/related",methods=['GET','POST'])
 def cartrelated():
+    related = Related.query.all()
     if request.method=='POST':
         randNumber=random.randint(1, 90000)
         f = request.files['file']
         newName=f"related{randNumber}.{f.filename.split('.')[-1]}"
         f.save(os.path.join(app.config['UPLOAD_PATH'],newName))   
         filePath=f"/{app.config['UPLOAD_PATH']}/{newName}"
-        db.session.add(Related(text=request.form['text'],cost=request.form['cost'],image=filePath))
+        db.session.add(Related(
+            text=request.form['text'],
+            cost=request.form['cost'],
+            image=filePath)
+        )
         db.session.commit()
         return redirect('/related')    
-    return render_template('admin/Cart.html')
+    return render_template('admin/Cart.html',related=related)
 
+@admin_bp.route("/cart/deleterelated/<int:id>",methods=['GET','POST'])
+def deletecartrelated(id):
+    db.session.delete(Related.query.get(id))
+    db.session.commit()
+    return redirect('/admin')
         
 #  ////////////////////////////////////// CART HISSE BITDI///////////////////////////////////////////////////
 
@@ -296,7 +329,11 @@ def wishlistrelated():
         newName=f"wishlistrelated{randNumber}.{f.filename.split('.')[-1]}"
         f.save(os.path.join(app.config['UPLOAD_PATH'],newName))   
         filePath=f"/{app.config['UPLOAD_PATH']}/{newName}"
-        db.session.add(Wishlistrelated(text=request.form['text'],cost=request.form['cost'],image=filePath))
+        db.session.add(Wishlistrelated(
+            text=request.form['text'],
+            cost=request.form['cost'],
+            image=filePath)
+        )
         db.session.commit()
         return redirect('/wishlistrelated')    
     return render_template('admin/Wishlist.html')

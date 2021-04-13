@@ -112,3 +112,5 @@ class Wishlistrelated(db.Model):
     cost = db.Column(db.String,nullable=False)
     text = db.Column(db.String,nullable=False)
     image = db.Column(db.String,nullable=False)
+
+

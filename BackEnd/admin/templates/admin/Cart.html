@@ -69,18 +69,19 @@
                 </tr>
             </thead>
             <tbody>
-                {% for i in cart %}
+                {% for cart in cart %}
                 <tr>
-                    <th scope="row">{{i.id}}</th>
-                    <td>{{i.price}}</td>
-                    <td>{{i.text}}</td>
-                    <td>{{i.total}}</td>
-                    <td>{{i.quantity}}</td>
-                    <td>{{i.image}}</td>
-                   <td>
-                                    <a href="/admin/deleteabout/{{cart.id}}"><i
-                                            class="fas fa-trash-alt text-danger font-16"></i></a>
-                                </td>
+                    <th scope="row">{{cart.id}}</th>
+                    <td>{{cart.price}}</td>
+                    <td>{{cart.text}}</td>
+                    <td>{{cart.total}}</td>
+                    <td>{{cart.quantity}}</td>
+                    <td>{{cart.image}}</td>
+                    <td>
+                        <a href="/cart/deletecart/{{cart.id}}"><i
+                        class="fas fa-trash-alt text-danger font-16"></i>
+                        </a>
+                    </td>
                 </tr>
                 {% endfor %}
             </tbody>
@@ -127,6 +128,38 @@
             <!--end card-body-->
         </div>
         <!--end card-->
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Cost</th>
+                    <th scope="col">Text</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in cartrelated %}
+                <tr>
+                    <th scope="row">{{i.id}}</th>
+                    <td>{{i.cost}}</td>
+                    <td>{{i.text}}</td>
+                    <td>{{i.image}}</td>
+                    <td name="buttons">
+                        <div class=" pull-right">
+                            <a href=""><i class="dripicons-pencil"></i></a>
+                            <a href="/admin/deletecartrelated/{{i.id}}"><i class="dripicons-cross"
+                                    aria-hidden="true"></i></a>
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
 </div>
 {% endblock %}

@@ -7,7 +7,7 @@ def index():
     homesliders = Homesliders.query.all()
     homereklam = Homereklam.query.all()
     homebestsellers = Bestsellers.query.all()
-    cart = Cart.query.all()
+    
     return render_template("web/index.html",sliders=homesliders,reklam=homereklam,best=homebestsellers,cart=cart)
 
 @app.route('/about',methods=['GET','POST'])
@@ -25,7 +25,8 @@ def addshoes():
 def cart():
     cart = Cart.query.all()
     cartrelated = Related.query.all()
-    return render_template("web/cart.html",cart=cart,cartrelated=cartrelated)
+    related= Related.query.all()
+    return render_template("web/cart.html",cart=cart,cartrelated=cartrelated,related=related)
 
 
 @app.route('/men',methods=['GET','POST'])
