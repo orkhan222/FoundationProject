@@ -64,12 +64,7 @@ class About(db.Model):
     span = db.Column(db.String,nullable=False)
     text = db.Column(db.String,nullable=False)
 
-class Productdetail(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    cost = db.Column(db.String,nullable=False)
-    text = db.Column(db.String,nullable=False)
-    image = db.Column(db.String,nullable=False)
-    span = db.Column(db.String,nullable=False)
+
 
 
 class Checkout(db.Model):
@@ -112,5 +107,28 @@ class Wishlistrelated(db.Model):
     cost = db.Column(db.String,nullable=False)
     text = db.Column(db.String,nullable=False)
     image = db.Column(db.String,nullable=False)
+
+
+
+
+
+class Brand(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    nike = db.Column(db.String,nullable=False)
+    adidas = db.Column(db.String,nullable=False)
+    merrel = db.Column(db.String,nullable=False)
+    gucci = db.Column(db.String,nullable=False)
+    sheckhers = db.Column(db.String,nullable=False)
+    product = db.relationship('Productdetail',backref='brand',lazy=True)
+   
+class Productdetail(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    cost = db.Column(db.String,nullable=False)
+    text = db.Column(db.String,nullable=False)
+    image = db.Column(db.String,nullable=False)
+    span = db.Column(db.String,nullable=False)
+    brand_id = db.Column(db.Integer,db.ForeignKey('brand.id'),nullable=False)
+
+
 
 
